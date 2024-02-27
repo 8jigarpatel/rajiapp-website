@@ -15,14 +15,14 @@ function App() {
   return (
     <>
       {isReady && (
-        <div className="flex">
-          <div className="w-60">
-            <div className="min-w-full bg-gray-50-400 h-svh p-2 overflow-auto">
+        <div className="flex text-black dark:text-white">
+          <div className="w-60 bg-slate-200 dark:bg-slate-800">
+            <div className="min-w-full h-svh p-2 overflow-auto">
               <Sidebar></Sidebar>
             </div>
           </div>
-          <div className="flex-1">
-            <div className="bg-gray-200 h-svh p-2 overflow-auto">
+          <div className="flex-1 bg-slate-100 dark:bg-slate-700">
+            <div className="h-svh p-2 overflow-auto">
               <Dashboard></Dashboard>
             </div>
           </div>
