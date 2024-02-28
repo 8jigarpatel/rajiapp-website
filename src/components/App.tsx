@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar/Sidebar';
 import Dashboard from './Dashboard';
 
 function App() {
@@ -15,22 +15,22 @@ function App() {
   return (
     <>
       {isReady && (
-        <div className="flex text-black dark:text-white">
-          <div className="w-60 bg-slate-200 dark:bg-slate-800">
-            <div className="min-w-full h-svh p-2 overflow-auto">
+        <div className="flex divide-x divide-slate-100 bg-white text-slate-800 dark:divide-slate-800 dark:bg-slate-900 dark:text-slate-100">
+          <div className="w-60">
+            <div className="h-svh min-w-full overflow-auto p-2">
               <Sidebar></Sidebar>
             </div>
           </div>
-          <div className="flex-1 bg-slate-100 dark:bg-slate-700">
-            <div className="h-svh p-2 overflow-auto">
+          <div className="flex-1">
+            <div className="h-svh overflow-auto p-2">
               <Dashboard></Dashboard>
             </div>
           </div>
         </div>
       )}
       {!isReady && (
-        <div className="w-svw h-svh flex justify-center items-center">
-          <div className="text-6xl animate-pulse">Loading...</div>
+        <div className="flex h-svh w-svw items-center justify-center">
+          <div className="animate-pulse text-6xl">Loading...</div>
         </div>
       )}
     </>
