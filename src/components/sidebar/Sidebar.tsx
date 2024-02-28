@@ -8,8 +8,9 @@ import {
   FaUsers,
 } from 'react-icons/fa';
 
-import Button from '../ui/Button';
+import ButtonOld from '../ui/ButtonOld';
 import { FaGear } from 'react-icons/fa6';
+import { Button } from '../ui/button';
 
 interface ISidebarProps {
   toggleThemeHandler: MouseEventHandler;
@@ -28,29 +29,30 @@ function Sidebar(props: ISidebarProps) {
       </button>
 
       <div className="space-y-2">
-        <Button
+        <ButtonOld
           text="Appointments"
           icon={FaCalendarAlt}
           onClick={toggleThemeHandler}
         />
-        <Button
+        <ButtonOld
           text="Clients"
           icon={FaUsers}
           onClick={toggleThemeHandler}
           selected
         />
-        <Button text="Settings" onClick={toggleThemeHandler} icon={FaGear} />
-        <Button
+        <ButtonOld text="Settings" onClick={toggleThemeHandler} icon={FaGear} />
+        <ButtonOld
           text="Change Theme"
           icon={FaPaintRoller}
           onClick={toggleThemeHandler}
         />
-        <Button
+        <ButtonOld
           className="bg-red-600 text-white hover:bg-red-700 dark:hover:bg-red-700"
           text="Log out"
           icon={FaSignOutAlt}
           onClick={toggleThemeHandler}
         />
+        <Button>Shad cn button</Button>
       </div>
     </>
   );

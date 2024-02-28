@@ -11,7 +11,7 @@ interface IButtonProps {
   className?: string;
 }
 
-function Button(props: IButtonProps) {
+function ButtonOld(props: IButtonProps) {
   const { text, onClick, className, selected, icon: Icon } = props;
   return (
     <button
@@ -28,4 +28,4 @@ function Button(props: IButtonProps) {
   );
 }
 
-export default Button;
+export default ButtonOld;
