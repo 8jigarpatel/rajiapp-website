@@ -30,26 +30,26 @@ function Sidebar(props: ISidebarProps) {
       <div className="space-y-2">
         <Button
           text="Appointments"
-          onClick={toggleThemeHandler}
           icon={FaCalendarAlt}
+          onClick={toggleThemeHandler}
         />
         <Button
           text="Clients"
-          onClick={toggleThemeHandler}
           icon={FaUsers}
+          onClick={toggleThemeHandler}
           selected
         />
         <Button text="Settings" onClick={toggleThemeHandler} icon={FaGear} />
         <Button
           text="Change Theme"
-          onClick={toggleThemeHandler}
           icon={FaPaintRoller}
+          onClick={toggleThemeHandler}
         />
         <Button
           className="bg-red-600 text-white hover:bg-red-700 dark:hover:bg-red-700"
           text="Log out"
-          onClick={toggleThemeHandler}
           icon={FaSignOutAlt}
+          onClick={toggleThemeHandler}
         />
       </div>
     </>
