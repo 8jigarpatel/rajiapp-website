@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEventHandler } from 'react';
 
 import { TbBrowserCheck } from 'react-icons/tb';
 import {
@@ -9,28 +9,14 @@ import {
 } from 'react-icons/fa';
 
 import Button from '../ui/Button';
-import { FaGear, FaGears } from 'react-icons/fa6';
+import { FaGear } from 'react-icons/fa6';
 
-function Sidebar() {
-  const [theme, setTheme] = React.useState<string>(
-    window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
-  );
+interface ISidebarProps {
+  toggleThemeHandler: MouseEventHandler;
+}
 
-  React.useEffect(() => {
-    if (theme === 'dark') {
-      window.localStorage.setItem('theme', 'dark');
-      document.documentElement.classList.add('dark');
-    } else {
-      window.localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((thm) => {
-      return thm === 'light' ? 'dark' : 'light';
-    });
-  };
+function Sidebar(props: ISidebarProps) {
+  const { toggleThemeHandler } = props;
 
   return (
     <>
@@ -44,20 +30,25 @@ function Sidebar() {
       <div className="space-y-2">
         <Button
           text="Appointments"
-          onClick={toggleTheme}
+          onClick={toggleThemeHandler}
           icon={FaCalendarAlt}
         />
-        <Button text="Clients" onClick={toggleTheme} icon={FaUsers} selected />
-        <Button text="Settings" onClick={toggleTheme} icon={FaGear} />
+        <Button
+          text="Clients"
+          onClick={toggleThemeHandler}
+          icon={FaUsers}
+          selected
+        />
+        <Button text="Settings" onClick={toggleThemeHandler} icon={FaGear} />
         <Button
           text="Change Theme"
-          onClick={toggleTheme}
+          onClick={toggleThemeHandler}
           icon={FaPaintRoller}
         />
         <Button
-          className="bg-red-600 text-white hover:bg-red-700 hover:dark:bg-red-700"
+          className="bg-red-600 text-white hover:bg-red-700 dark:hover:bg-red-700"
           text="Log out"
-          onClick={toggleTheme}
+          onClick={toggleThemeHandler}
           icon={FaSignOutAlt}
         />
       </div>
